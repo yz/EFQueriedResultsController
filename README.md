@@ -99,9 +99,9 @@ Modeled after the NSFetchedResultsController, the EFQueriedResultsController wor
 // Example deleting an item from the EFQueriedResultsController when the item is tapped by the user.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyObject *object = [self.queriedResultsController objectAtIndexPath:indexPath];
+    EFShoppingListItem *shoppingListItem = [self.queriedResultsController objectAtIndexPath:indexPath];
 
-    [self.queriedResultsController deleteObjects:@[object] onCompletion:^{        
+    [self.queriedResultsController deleteObjects:@[shoppingListItem] onCompletion:^{        
         // TODO Do something useful.
     }];
 }
