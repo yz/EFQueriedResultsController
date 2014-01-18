@@ -90,9 +90,9 @@ Modeled after the NSFetchedResultsController, the EFQueriedResultsController wor
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    MyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    MyObject *obj = [self.queriedResultsController objectAtIndexPath:indexPath];    
-    [self configureCell:cell obj];    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    EFShoppingListItem *shoppingListItem = [self.queriedResultsController objectAtIndexPath:indexPath];    
+    [self configureCell:cell shoppingListItem];    
     return cell;
 }
 
