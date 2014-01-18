@@ -3,6 +3,7 @@ EFQueriedResultsController
 
 Modeled after the NSFetchedResultsController, the EFQueriedResultsController works with the Parse.com platform to simplify managing the state of a list view (UITableView).
 
+```
 // Update your view controller to implement EFQueriedResultsControllerDelegate.h
 
 // Add a property for a EFQueriedResultsController and implement its getter.
@@ -94,5 +95,5 @@ Modeled after the NSFetchedResultsController, the EFQueriedResultsController wor
     [self configureCell:cell obj];    
     return cell;
 }
-
+```
 
