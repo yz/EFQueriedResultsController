@@ -1,7 +1,10 @@
 EFQueriedResultsController
 ==========================
 
-Modeled after the NSFetchedResultsController, the EFQueriedResultsController works with the Parse.com platform to simplify managing the state of a list view (UITableView).
+Modeled after the NSFetchedResultsController, the EFQueriedResultsController works with the Parse.com platform to simplify managing the state of a list view (UITableView).  It is more flexible than Parse’s PFQueryTableViewController in that it allows objects to be inserted, updated, deleted, or even filtered on the fly. 
+
+** Note, inserting, deleting, or updating objects in the EFQueriedResultsController will not automatically push these changes to Parse.  The EFQueriedResultsController provides completion blocks which can be used to call Parse after the controller changes have finished.
+
 
 ```objective-c
 // Update your view controller to implement EFQueriedResultsControllerDelegate.h
