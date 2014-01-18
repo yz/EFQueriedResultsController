@@ -64,10 +64,6 @@ Modeled after the NSFetchedResultsController, the EFQueriedResultsController wor
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case EFQueriedResultsChangeUpdate:
-            
-            // The activeIndexPath must be updated since the shoppingListItem may have moved to a different category.
-            self.activeIndexPath = indexPath;
-            
             [self configureCell:(EFShoppingListItemCell *)[self.tableView cellForRowAtIndexPath:indexPath] withObject:anObject];
             break;
     }
