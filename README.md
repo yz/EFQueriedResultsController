@@ -95,5 +95,24 @@ Modeled after the NSFetchedResultsController, the EFQueriedResultsController wor
     [self configureCell:cell obj];    
     return cell;
 }
+
+// Example deleting an item from the EFQueriedResultsController when the item is tapped by the user.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyObject *object = [self.queriedResultsController objectAtIndexPath:indexPath];
+
+    [self.queriedResultsController deleteObjects:@[object] onCompletion:^{        
+        // TODO Do something useful.
+    }];
+}
+
+// Example inserting an item into the EFQueriedResultsController.
+- (void)shoppingListAddItemsViewController:(EFShoppingListAddItemsViewController *)viewController didChooseItems:(NSArray *)shoppingListItems
+{
+    [PFObject saveAllInBackground:shoppingListItems];
+    [self.queriedResultsController insertObjects:shoppingListItems onCompletion:^{        
+        // TODO Do something useful.
+    }];
+}
 ```
 
